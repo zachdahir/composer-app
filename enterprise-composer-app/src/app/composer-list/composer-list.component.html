@@ -1,0 +1,24 @@
+<div class='textSearch'>
+  <input type="text" id='textSearch' class='form-control' placeholder='Search by Name' [formControl]='txtSearchControl'>
+
+</div>
+<table class='table table-bordered'>
+  <thead class='thead thead-dark'>
+    <tr>
+      <th>Id</th>
+      <th>Full Name</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let composer of composers | async">
+    <tr>
+      <td> {{ composer.id}}
+        <a routerLink='/composer-details/{{ composer.composerId }}'>
+        {{ composer.composerId }}
+      </a>
+      </td>
+      <td> {{ composer.fullName }} </td>
+      <td> {{ composer.genre}} </td>
+    </tr>
+  </tbody>
+</table>
